@@ -1,5 +1,6 @@
-src/Game.o: ../src/Game.cpp ../src/Game.h /usr/local/include/SDL2/SDL.h \
-  /usr/local/include/SDL2/SDL_main.h \
+src/BlobMovement.o: ../src/BlobMovement.cpp ../src/BlobMovement.h \
+  ../src/MovementAI.h ../src/Player.h ../src/Game.h \
+  /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
   /usr/local/include/SDL2/SDL_stdinc.h \
   /usr/local/include/SDL2/SDL_config.h \
   /usr/local/include/SDL2/SDL_platform.h \
@@ -44,9 +45,14 @@ src/Game.o: ../src/Game.cpp ../src/Game.h /usr/local/include/SDL2/SDL.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_image.h ../src/CollisionManager.h \
-  ../src/CollidableObject.h ../src/Map.h ../src/Player.h \
-  ../src/GameObject.h ../src/ProjectileManager.h ../src/Projectile.h \
-  ../src/Enemy.h ../src/MovementAI.h ../src/BlobMovement.h
+  ../src/CollidableObject.h ../src/GameObject.h \
+  ../src/ProjectileManager.h ../src/Projectile.h
+
+../src/BlobMovement.h:
+
+../src/MovementAI.h:
+
+../src/Player.h:
 
 ../src/Game.h:
 
@@ -148,18 +154,8 @@ src/Game.o: ../src/Game.cpp ../src/Game.h /usr/local/include/SDL2/SDL.h \
 
 ../src/CollidableObject.h:
 
-../src/Map.h:
-
-../src/Player.h:
-
 ../src/GameObject.h:
 
 ../src/ProjectileManager.h:
 
 ../src/Projectile.h:
-
-../src/Enemy.h:
-
-../src/MovementAI.h:
-
-../src/BlobMovement.h:

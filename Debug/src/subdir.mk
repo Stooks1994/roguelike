@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/BlobMovement.cpp \
 ../src/CollidableObject.cpp \
 ../src/CollisionManager.cpp \
+../src/Enemy.cpp \
 ../src/FrameTimer.cpp \
 ../src/Game.cpp \
 ../src/GameObject.cpp \
 ../src/Map.cpp \
+../src/MovementAI.cpp \
 ../src/Player.cpp \
 ../src/Projectile.cpp \
 ../src/ProjectileManager.cpp \
@@ -17,12 +20,15 @@ CPP_SRCS += \
 ../src/main.cpp 
 
 OBJS += \
+./src/BlobMovement.o \
 ./src/CollidableObject.o \
 ./src/CollisionManager.o \
+./src/Enemy.o \
 ./src/FrameTimer.o \
 ./src/Game.o \
 ./src/GameObject.o \
 ./src/Map.o \
+./src/MovementAI.o \
 ./src/Player.o \
 ./src/Projectile.o \
 ./src/ProjectileManager.o \
@@ -30,12 +36,15 @@ OBJS += \
 ./src/main.o 
 
 CPP_DEPS += \
+./src/BlobMovement.d \
 ./src/CollidableObject.d \
 ./src/CollisionManager.d \
+./src/Enemy.d \
 ./src/FrameTimer.d \
 ./src/Game.d \
 ./src/GameObject.d \
 ./src/Map.d \
+./src/MovementAI.d \
 ./src/Player.d \
 ./src/Projectile.d \
 ./src/ProjectileManager.d \
