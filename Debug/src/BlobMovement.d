@@ -45,8 +45,8 @@ src/BlobMovement.o: ../src/BlobMovement.cpp ../src/BlobMovement.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_image.h ../src/CollisionManager.h \
-  ../src/CollidableObject.h ../src/GameObject.h \
-  ../src/ProjectileManager.h ../src/Projectile.h
+  ../src/CollidableObject.h ../src/ProjectileManager.h \
+  ../src/Projectile.h
 
 ../src/BlobMovement.h:
 
@@ -153,8 +153,6 @@ src/BlobMovement.o: ../src/BlobMovement.cpp ../src/BlobMovement.h \
 ../src/CollisionManager.h:
 
 ../src/CollidableObject.h:
-
-../src/GameObject.h:
 
 ../src/ProjectileManager.h:
 

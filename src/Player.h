@@ -2,12 +2,11 @@
 #define SRC_PLAYER_H_
 
 #include "Game.h"
-#include "GameObject.h"
 #include "ProjectileManager.h"
 
 enum Direction {UP, DOWN, LEFT, RIGHT};
 
-class Player : public GameObject {
+class Player {
 
 public:
 	Player(const char* textureSheet, int x, int y);
@@ -20,6 +19,8 @@ public:
 private:
 	double xVel;
 	double yVel;
+	double xPos;
+	double yPos;
 	double movespeed;
 	int currDir;
 
@@ -28,6 +29,9 @@ private:
 	double fireCD_max;
 	double fireCD_curr;
 	ProjectileManager* projectileManager;
+
+	SDL_Rect srcRect, destRect;
+	SDL_Texture* objectTexture;
 };
 
 #endif /* SRC_PLAYER_H_ */

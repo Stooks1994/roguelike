@@ -1,9 +1,7 @@
 #include <iostream>
 #include "Game.h"
-#include "FrameTimer.h"
 
 Game* game = nullptr;
-FrameTimer timer;
 
 int main(int argc, const char* argv[]) {
 	game = new Game();

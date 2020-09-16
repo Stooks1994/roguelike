@@ -45,8 +45,8 @@ src/MovementAI.o: ../src/MovementAI.cpp ../src/MovementAI.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_image.h ../src/CollisionManager.h \
-  ../src/CollidableObject.h ../src/GameObject.h \
-  ../src/ProjectileManager.h ../src/Projectile.h
+  ../src/CollidableObject.h ../src/ProjectileManager.h \
+  ../src/Projectile.h
 
 ../src/MovementAI.h:
 
@@ -151,8 +151,6 @@ src/MovementAI.o: ../src/MovementAI.cpp ../src/MovementAI.h \
 ../src/CollisionManager.h:
 
 ../src/CollidableObject.h:
-
-../src/GameObject.h:
 
 ../src/ProjectileManager.h:
 
