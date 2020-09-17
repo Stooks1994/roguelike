@@ -33,11 +33,11 @@ void Projectile::update(double dt) {
 	if (yPos + 8 > 640) destroyed = true;
 }
 
-void Projectile::render() {
+void Projectile::render(SDL_Renderer* rend) {
 	if (!destroyed) {
 		destRect.x = (int) xPos;
 		destRect.y = (int) yPos;
-		SDL_RenderCopy(Game::renderer, objectTexture, &srcRect, &destRect);
+		SDL_RenderCopy(rend, objectTexture, &srcRect, &destRect);
 	} else {
 		delete this;
 	}

@@ -1,6 +1,6 @@
-src/ProjectileManager.o: ../src/ProjectileManager.cpp \
-  ../src/ProjectileManager.h ../src/Projectile.h \
-  /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
+src/EntityManager.o: ../src/EntityManager.cpp ../src/EntityManager.h \
+  ../src/Enemy.h /usr/local/include/SDL2/SDL.h \
+  /usr/local/include/SDL2/SDL_main.h \
   /usr/local/include/SDL2/SDL_stdinc.h \
   /usr/local/include/SDL2/SDL_config.h \
   /usr/local/include/SDL2/SDL_platform.h \
@@ -44,11 +44,12 @@ src/ProjectileManager.o: ../src/ProjectileManager.cpp \
   /usr/local/include/SDL2/SDL_system.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
-  /usr/local/include/SDL2/SDL_image.h
+  /usr/local/include/SDL2/SDL_image.h ../src/MovementAI.h \
+  ../src/CollidableObject.h ../src/Projectile.h
 
-../src/ProjectileManager.h:
+../src/EntityManager.h:
 
-../src/Projectile.h:
+../src/Enemy.h:
 
 /usr/local/include/SDL2/SDL.h:
 
@@ -143,3 +144,9 @@ src/ProjectileManager.o: ../src/ProjectileManager.cpp \
 /usr/local/include/SDL2/SDL_version.h:
 
 /usr/local/include/SDL2/SDL_image.h:
+
+../src/MovementAI.h:
+
+../src/CollidableObject.h:
+
+../src/Projectile.h:

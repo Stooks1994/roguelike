@@ -10,7 +10,7 @@ public:
 	virtual ~Projectile();
 
 	void update(double dt);
-	void render();
+	void render(SDL_Renderer* rend);
 	bool isDestroyed() { return destroyed; }
 
 private:

@@ -23,7 +23,7 @@ int main(int argc, const char* argv[]) {
 
 			game->handleEvents();
 			game->update(dt / 1000.f);
-			game->render();
+			game->render(Game::renderer);
 
 			last_t = curr_t;
 		} else {

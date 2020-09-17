@@ -1,5 +1,7 @@
 #include "Map.h"
 #include "TextureManager.h"
+#include "BlobMovement.h"
+#include "CollidableObject.h"
 #include <iostream>
 #include <fstream>
 
@@ -43,12 +45,18 @@ void Map::loadMap(const char* fileName) {
 			type = map[i][j];
 
 			switch(type) {
-			case 0: Game::collisionManager->addObject(j * 32, i * 32, 32, 32); break;
-			case 2: Game::collisionManager->addObject(j * 32, i * 32, 32, 32); break;
-			case 3: Game::collisionManager->addObject(j * 32, i * 32, 32, 32); break;
+			case 0: Game::entityManager->addCollidableObject(new CollidableObject(j * 32, i * 32, 32, 32)); break;
+			case 2: Game::entityManager->addCollidableObject(new CollidableObject(j * 32, i * 32, 32, 32)); break;
+			case 3: Game::entityManager->addCollidableObject(new CollidableObject(j * 32, i * 32, 32, 32)); break;
 			}
 		}
 	}
+
+	//Populate EnemyManager for current level
+	struct Stats enemyStats(50, 50, 50);
+	Game::entityManager->addEnemy(new Enemy("./blob.png", 550, 550, enemyStats, new BlobMovement()));
+	Game::entityManager->addEnemy(new Enemy("./blob.png", 550, 550, enemyStats, new BlobMovement()));
+	Game::entityManager->addEnemy(new Enemy("./blob.png", 650, 550, enemyStats, new BlobMovement()));
 }
 
 void Map::drawMap() {

@@ -4,6 +4,9 @@
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 #include "MovementAI.h"
+#include "CollidableObject.h"
+#include <vector>
+#include <stdio.h>
 
 struct Stats {
 	double max_hp;
@@ -29,13 +32,15 @@ public:
 	Enemy(const char* textureSheet, double xPosition, double yPosition, Stats enemyStats, MovementAI* movementAI);
 	virtual ~Enemy();
 
-	void update(double dt);
-	void render();
+	void update(double dt, std::vector<CollidableObject*> collidableObjects);
+	void render(SDL_Renderer* rend);
 	bool isDestroyed() { return destroyed; }
+
+	double xPos, yPos;
+
 
 private:
 	double xVel, yVel;
-	double xPos, yPos;
 	bool destroyed;
 
 	Stats stats;

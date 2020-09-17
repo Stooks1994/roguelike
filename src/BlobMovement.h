@@ -12,7 +12,7 @@ public:
 private:
 	double directionChangeCD_max = 1;
 	double directionChangeCD_curr = 1;
-	int currDir = RIGHT;
+	int currDir = AI_RIGHT;
 };
 
 #endif /* SRC_BLOBMOVEMENT_H_ */

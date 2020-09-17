@@ -1,18 +1,12 @@
 #include "Game.h"
 #include "Map.h"
 #include "Player.h"
-#include "Enemy.h"
-#include "MovementAI.h"
-#include "BlobMovement.h"
 
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Event Game::event;
-CollisionManager* Game::collisionManager = new CollisionManager();
+EntityManager* Game::entityManager = new EntityManager();
 Map* map;
 Player* player;
-
-Enemy* blob;
-MovementAI* enemyMovementAI;
 
 Game::Game() {
 
@@ -37,27 +31,22 @@ void Game::init(const char* title, int xPos, int yPos, int w, int h, bool fs) {
 	} else {
 		isRunning = false;
 	}
-
-	struct Stats blobStats = Stats(50, 50, 50);
-	enemyMovementAI = new BlobMovement();
-
 	map = new Map();
 	player = new Player("knight.png", 50, 50);
-	blob = new Enemy("blob.png", 550, 550, blobStats, enemyMovementAI);
 }
 
 void Game::update(double dt) {
 	//map->loadMap() 		pass in array stored in external file to change map
 	player->update(dt);
-	blob->update(dt);
+	Game::entityManager->update(dt);
 }
 
-void Game::render() {
-	SDL_RenderClear(renderer);
+void Game::render(SDL_Renderer* rend) {
+	SDL_RenderClear(rend);
 	map->drawMap();
-	player->render();
-	blob->render();
-	SDL_RenderPresent(renderer);
+	player->render(rend);
+	entityManager->render(rend);
+	SDL_RenderPresent(rend);
 }
 
 void Game::handleEvents() {

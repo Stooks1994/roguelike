@@ -3,8 +3,7 @@
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
-#include "CollisionManager.h"
-
+#include "EntityManager.h"
 #include <iostream>
 
 class Game {
@@ -15,7 +14,7 @@ public:
 
 	void init(const char* title, int xPos, int yPos, int w, int h, bool fs);
 	void update(double dt);
-	void render();
+	void render(SDL_Renderer* rend);
 	void clean();
 	void handleEvents();
 
@@ -23,7 +22,7 @@ public:
 
 	static SDL_Renderer* renderer;
 	static SDL_Event event;
-	static CollisionManager* collisionManager;
+	static EntityManager* entityManager;
 
 private:
 	bool isRunning;

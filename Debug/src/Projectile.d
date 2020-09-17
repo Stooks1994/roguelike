@@ -43,8 +43,7 @@ src/Projectile.o: ../src/Projectile.cpp ../src/Projectile.h \
   /usr/local/include/SDL2/SDL_system.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
-  /usr/local/include/SDL2/SDL_image.h ../src/TextureManager.h \
-  ../src/Game.h ../src/CollisionManager.h ../src/CollidableObject.h
+  /usr/local/include/SDL2/SDL_image.h ../src/TextureManager.h
 
 ../src/Projectile.h:
 
@@ -143,9 +142,3 @@ src/Projectile.o: ../src/Projectile.cpp ../src/Projectile.h \
 /usr/local/include/SDL2/SDL_image.h:
 
 ../src/TextureManager.h:
-
-../src/Game.h:
-
-../src/CollisionManager.h:
-
-../src/CollidableObject.h:

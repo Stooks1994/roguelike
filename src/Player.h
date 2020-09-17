@@ -2,7 +2,7 @@
 #define SRC_PLAYER_H_
 
 #include "Game.h"
-#include "ProjectileManager.h"
+//#include "ProjectileManager.h"
 
 enum Direction {UP, DOWN, LEFT, RIGHT};
 
@@ -14,7 +14,7 @@ public:
 
 	void update(double dt);
 	void handleEvents();
-	void render();
+	void render(SDL_Renderer* rend);
 
 private:
 	double xVel;
@@ -28,7 +28,7 @@ private:
 	int firingDir;
 	double fireCD_max;
 	double fireCD_curr;
-	ProjectileManager* projectileManager;
+	//ProjectileManager* projectileManager;
 
 	SDL_Rect srcRect, destRect;
 	SDL_Texture* objectTexture;

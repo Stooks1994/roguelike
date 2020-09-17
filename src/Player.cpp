@@ -1,8 +1,9 @@
 #include "Player.h"
 #include "TextureManager.h"
+#include "Projectile.h"
 
 Player::Player(const char* textureSheet, int x, int y) {
-	projectileManager = new ProjectileManager();
+	//projectileManager = new ProjectileManager();
 	firing = false;
 	firingDir = RIGHT;
 	fireCD_max = 1.0;
@@ -68,7 +69,7 @@ void Player::update(double dt) {
 	double projectedX = xPos + (xVel * dt);
 	double projectedY = yPos + (yVel * dt);
 
-	if (!Game::collisionManager->checkCollisions(projectedX, projectedY, 32, 32)) {
+	if (!Game::entityManager->checkCollisions(projectedX, projectedY, 32, 32)) {
 		xPos += xVel * dt;
 		yPos += yVel * dt;
 	}
@@ -89,21 +90,21 @@ void Player::update(double dt) {
 
 	if (firing && fireCD_curr == 0) {
 		switch(firingDir) {
-		case RIGHT: projectileManager->addProjectile("./arrow_horizontal.png", xPos, yPos, 500, 0, 16, 0); break;
-		case LEFT: projectileManager->addProjectile("./arrow_horizontal.png", xPos, yPos, -500, 0, 0, 0); break;
-		case UP: projectileManager->addProjectile("./arrow_vertical.png", xPos, yPos, 0, -500, 0, 0); break;
-		case DOWN: projectileManager->addProjectile("./arrow_vertical.png", xPos, yPos, 0, 500, 0, 16); break;
+		case RIGHT: Game::entityManager->addProjectile(new Projectile("./arrow_horizontal.png", xPos, yPos, 500, 0, 16, 0)); break;
+		case LEFT: Game::entityManager->addProjectile(new Projectile("./arrow_horizontal.png", xPos, yPos, -500, 0, 0, 0)); break;
+		case UP: Game::entityManager->addProjectile(new Projectile("./arrow_vertical.png", xPos, yPos, 0, -500, 0, 0)); break;
+		case DOWN: Game::entityManager->addProjectile(new Projectile("./arrow_vertical.png", xPos, yPos, 0, 500, 0, 16)); break;
 		}
 
 		fireCD_curr = fireCD_max;
 	}
 	/************************************/
 
-	projectileManager->update(dt);
-	projectileManager->removeDestroyedProjectiles();
+	Game::entityManager->update(dt);
+	Game::entityManager->removeDestroyedProjectiles();
 }
 
-void Player::render() {
+void Player::render(SDL_Renderer* rend) {
 	destRect.x = (int) xPos;
 	destRect.y = (int) yPos;
 
@@ -113,7 +114,7 @@ void Player::render() {
 	default: break;
 	}
 
-	projectileManager->render();
+	Game::entityManager->render(rend);
 
-	SDL_RenderCopy(Game::renderer, objectTexture, &srcRect, &destRect);
+	SDL_RenderCopy(rend, objectTexture, &srcRect, &destRect);
 }

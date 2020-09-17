@@ -1,7 +1,7 @@
 #ifndef SRC_MOVEMENTAI_H_
 #define SRC_MOVEMENTAI_H_
 
-#include "Player.h"
+enum AIDirection {AI_UP, AI_DOWN, AI_LEFT, AI_RIGHT};
 
 class MovementAI {
 

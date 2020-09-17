@@ -1,6 +1,5 @@
 src/TextureManager.o: ../src/TextureManager.cpp ../src/TextureManager.h \
-  ../src/Game.h /usr/local/include/SDL2/SDL.h \
-  /usr/local/include/SDL2/SDL_main.h \
+  /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
   /usr/local/include/SDL2/SDL_stdinc.h \
   /usr/local/include/SDL2/SDL_config.h \
   /usr/local/include/SDL2/SDL_platform.h \
@@ -44,12 +43,11 @@ src/TextureManager.o: ../src/TextureManager.cpp ../src/TextureManager.h \
   /usr/local/include/SDL2/SDL_system.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
-  /usr/local/include/SDL2/SDL_image.h ../src/CollisionManager.h \
-  ../src/CollidableObject.h
+  /usr/local/include/SDL2/SDL_image.h ../src/Game.h \
+  ../src/EntityManager.h ../src/Enemy.h ../src/MovementAI.h \
+  ../src/CollidableObject.h ../src/Projectile.h
 
 ../src/TextureManager.h:
-
-../src/Game.h:
 
 /usr/local/include/SDL2/SDL.h:
 
@@ -145,6 +143,14 @@ src/TextureManager.o: ../src/TextureManager.cpp ../src/TextureManager.h \
 
 /usr/local/include/SDL2/SDL_image.h:
 
-../src/CollisionManager.h:
+../src/Game.h:
+
+../src/EntityManager.h:
+
+../src/Enemy.h:
+
+../src/MovementAI.h:
 
 ../src/CollidableObject.h:
+
+../src/Projectile.h:

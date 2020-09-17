@@ -44,9 +44,7 @@ src/Enemy.o: ../src/Enemy.cpp ../src/Enemy.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_image.h ../src/MovementAI.h \
-  ../src/Player.h ../src/Game.h ../src/CollisionManager.h \
-  ../src/CollidableObject.h ../src/ProjectileManager.h \
-  ../src/Projectile.h ../src/TextureManager.h
+  ../src/CollidableObject.h ../src/TextureManager.h
 
 ../src/Enemy.h:
 
@@ -146,16 +144,6 @@ src/Enemy.o: ../src/Enemy.cpp ../src/Enemy.h \
 
 ../src/MovementAI.h:
 
-../src/Player.h:
-
-../src/Game.h:
-
-../src/CollisionManager.h:
-
 ../src/CollidableObject.h:
-
-../src/ProjectileManager.h:
-
-../src/Projectile.h:
 
 ../src/TextureManager.h:

@@ -43,8 +43,8 @@ src/Player.o: ../src/Player.cpp ../src/Player.h ../src/Game.h \
   /usr/local/include/SDL2/SDL_system.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
-  /usr/local/include/SDL2/SDL_image.h ../src/CollisionManager.h \
-  ../src/CollidableObject.h ../src/ProjectileManager.h \
+  /usr/local/include/SDL2/SDL_image.h ../src/EntityManager.h \
+  ../src/Enemy.h ../src/MovementAI.h ../src/CollidableObject.h \
   ../src/Projectile.h ../src/TextureManager.h
 
 ../src/Player.h:
@@ -145,11 +145,13 @@ src/Player.o: ../src/Player.cpp ../src/Player.h ../src/Game.h \
 
 /usr/local/include/SDL2/SDL_image.h:
 
-../src/CollisionManager.h:
+../src/EntityManager.h:
+
+../src/Enemy.h:
+
+../src/MovementAI.h:
 
 ../src/CollidableObject.h:
-
-../src/ProjectileManager.h:
 
 ../src/Projectile.h:
 
