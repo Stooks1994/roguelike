@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include "BlobMovement.h"
 
-double BlobMovement::updateXPos(double currXPos, double currYPos, double currXVel, double dt) {
+double BlobMovement::updateXPos(double currXPos, double currYPos, double currXVel, double dt, std::vector<CollidableObject*> collidableObjects) {
 	double newX;
 
 	if (directionChangeCD_curr <= 0) {
@@ -21,18 +21,16 @@ double BlobMovement::updateXPos(double currXPos, double currYPos, double currXVe
 		newX = 0;
 	}
 
-	/*
-	if (Game::collisionManager->checkCollisions(currXPos + newX, currYPos, 32, 32)) {
+	if (checkCollisions(currXPos + newX, currYPos, collidableObjects)) {
 		newX = 0;
 	}
-	*/
 
 	directionChangeCD_curr -= dt;
 
 	return newX;
 }
 
-double BlobMovement::updateYPos(double currYPos, double currXPos, double currYVel, double dt) {
+double BlobMovement::updateYPos(double currYPos, double currXPos, double currYVel, double dt, std::vector<CollidableObject*> collidableObjects) {
 	double newY;
 
 	if (directionChangeCD_curr <= 0) {
@@ -52,14 +50,25 @@ double BlobMovement::updateYPos(double currYPos, double currXPos, double currYVe
 		newY = 0;
 	}
 
-	/*
-	if (Game::collisionManager->checkCollisions(currXPos, currYPos + newY, 32, 32)) {
+	if (checkCollisions(currXPos, currYPos + newY, collidableObjects)) {
 		newY = 0;
 	}
-	*/
 
 	directionChangeCD_curr -= dt;
 
 	return newY;
 }
 
+bool BlobMovement::checkCollisions(double currXPos, double currYPos, std::vector<CollidableObject*> collidableObjects) {
+	bool collision = false;
+
+	for (auto& c : collidableObjects) {
+		if ((currXPos > c->x && currXPos < c->x + c->w) || (currXPos + 32 > c->x && currXPos + 32 <= c->x + c->w)) {
+			if ((currYPos > c->y && currYPos < c->y + c->h) || (currYPos + 32 > c->y && currYPos+32 <= c->y + c->h)) {
+				collision = true;
+			}
+		}
+	}
+
+	return collision;
+}

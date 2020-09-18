@@ -9,11 +9,11 @@ MovementAI::~MovementAI() {
 	// TODO Auto-generated destructor stub
 }
 
-double MovementAI::updateXPos(double currXPos, double currYPos, double currXVel, double dt) {
+double MovementAI::updateXPos(double currXPos, double currYPos, double currXVel, double dt, std::vector<CollidableObject*> collidableObjects) {
 	return 0;
 }
 
-double MovementAI::updateYPos(double currYPos, double currXPos, double currYVel, double dt) {
+double MovementAI::updateYPos(double currYPos, double currXPos, double currYVel, double dt, std::vector<CollidableObject*> collidableObjects) {
 	return 0;
 }
 

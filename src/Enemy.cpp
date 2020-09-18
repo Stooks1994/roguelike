@@ -25,33 +25,8 @@ Enemy::~Enemy() {
 }
 
 void Enemy::update(double dt, std::vector<CollidableObject*> collidableObjects) {
-	/*
-	int deltaX = enemyMovement->updateXPos(xPos, yPos, stats.movespeed, dt);
-	int deltaY = enemyMovement->updateYPos(yPos, xPos, stats.movespeed, dt);
-
-	bool collisionFlagX = false;
-	bool collisionFlagY = false;
-	for (auto& object : collidableObjects) {
-		if ((xPos + deltaX > object->x && xPos + deltaX < object->x + object->w) || (xPos + deltaX + 32 > object->x && xPos + deltaX + 32 <= object->x + object->w)) {
-			collisionFlagX = true;
-		}
-
-		if ((yPos + deltaY > object->y && yPos + deltaY < object->y + object->h) || (yPos + deltaY + 32 > object->y && yPos + deltaY + 32 <= object->y + object->h)) {
-			collisionFlagY = true;
-		}
-	}
-
-	if (!collisionFlagX) {
-		xPos += deltaX;
-	}
-
-	if (!collisionFlagY) {
-		yPos += deltaY;
-	}
-	*/
-
-	xPos += enemyMovement->updateXPos(xPos, yPos, stats.movespeed, dt);
-	yPos += enemyMovement->updateYPos(yPos, xPos, stats.movespeed, dt);
+	xPos += enemyMovement->updateXPos(xPos, yPos, stats.movespeed, dt, collidableObjects);
+	yPos += enemyMovement->updateYPos(yPos, xPos, stats.movespeed, dt, collidableObjects);
 
 	if (stats.curr_hp <= 0) {
 		destroyed = true;
