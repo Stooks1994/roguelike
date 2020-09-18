@@ -54,9 +54,9 @@ void Map::loadMap(const char* fileName) {
 
 	//Populate EnemyManager for current level
 	struct Stats enemyStats(50, 50, 50);
-	Game::entityManager->addEnemy(new Enemy("./blob.png", 550, 550, enemyStats, new BlobMovement()));
-	Game::entityManager->addEnemy(new Enemy("./blob.png", 550, 550, enemyStats, new BlobMovement()));
-	Game::entityManager->addEnemy(new Enemy("./blob.png", 650, 550, enemyStats, new BlobMovement()));
+	Game::entityManager->addEnemy(new Enemy("./blob.png", 250, 550, enemyStats, new BlobMovement()));
+	Game::entityManager->addEnemy(new Enemy("./blob_red.png", 550, 550, enemyStats, new BlobMovement()));
+	Game::entityManager->addEnemy(new Enemy("./blob_blue.png", 650, 550, enemyStats, new BlobMovement()));
 }
 
 void Map::drawMap() {

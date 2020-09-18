@@ -90,10 +90,10 @@ void Player::update(double dt) {
 
 	if (firing && fireCD_curr == 0) {
 		switch(firingDir) {
-		case RIGHT: Game::entityManager->addProjectile(new Projectile("./arrow_horizontal.png", xPos, yPos, 500, 0, 16, 0)); break;
-		case LEFT: Game::entityManager->addProjectile(new Projectile("./arrow_horizontal.png", xPos, yPos, -500, 0, 0, 0)); break;
-		case UP: Game::entityManager->addProjectile(new Projectile("./arrow_vertical.png", xPos, yPos, 0, -500, 0, 0)); break;
-		case DOWN: Game::entityManager->addProjectile(new Projectile("./arrow_vertical.png", xPos, yPos, 0, 500, 0, 16)); break;
+		case RIGHT: Game::entityManager->addProjectile(new Projectile("./arrow_horizontal.png", xPos, yPos, 300, 0, 16, 0)); break;
+		case LEFT: Game::entityManager->addProjectile(new Projectile("./arrow_horizontal.png", xPos, yPos, -300, 0, 0, 0)); break;
+		case UP: Game::entityManager->addProjectile(new Projectile("./arrow_vertical.png", xPos, yPos, 0, -300, 0, 0)); break;
+		case DOWN: Game::entityManager->addProjectile(new Projectile("./arrow_vertical.png", xPos, yPos, 0, 300, 0, 16)); break;
 		}
 
 		fireCD_curr = fireCD_max;

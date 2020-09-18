@@ -16,6 +16,10 @@ Enemy::Enemy(const char* textureSheet, double xPosition, double yPosition, Stats
 	stats.curr_hp = enemyStats.curr_hp;
 	stats.movespeed = enemyStats.movespeed;
 
+	destRect.x = xPos;
+	destRect.y = yPos;
+
+	srcRect.x = srcRect.y = 0;
 	srcRect.h = srcRect.w = 32;
 	destRect.h = destRect.w = 32;
 }
@@ -39,6 +43,7 @@ void Enemy::render(SDL_Renderer* rend) {
 		destRect.y = (int) yPos;
 		SDL_RenderCopy(rend, objectTexture, &srcRect, &destRect);
 	} else {
+		printf("deleted\n");
 		delete this;
 	}
 }
