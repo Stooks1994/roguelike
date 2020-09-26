@@ -28,11 +28,11 @@ void EntityManager::render(SDL_Renderer* rend) {
 
 void EntityManager::update(double dt) {
 	for (auto& enemy : enemies) {
-		enemy->update(dt, collidableObjects);
+		enemy->update(dt, collidableObjects, enemies);
 	}
 
 	for (auto& projectile : projectiles) {
-		projectile->update(dt);
+		projectile->update(dt, enemies);
 	}
 
 	removeDestroyedEnemies();

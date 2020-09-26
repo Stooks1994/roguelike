@@ -1,7 +1,8 @@
 #include <cstdlib>
 #include "BlobMovement.h"
 
-double BlobMovement::updateXPos(double currXPos, double currYPos, double currXVel, double dt, std::vector<CollidableObject*> collidableObjects) {
+double BlobMovement::updateXPos(double currXPos, double currYPos, double currXVel, double dt,
+		std::vector<CollidableObject*> collidableObjects) {
 	double newX;
 
 	if (directionChangeCD_curr <= 0) {
@@ -30,7 +31,8 @@ double BlobMovement::updateXPos(double currXPos, double currYPos, double currXVe
 	return newX;
 }
 
-double BlobMovement::updateYPos(double currYPos, double currXPos, double currYVel, double dt, std::vector<CollidableObject*> collidableObjects) {
+double BlobMovement::updateYPos(double currYPos, double currXPos, double currYVel, double dt,
+		std::vector<CollidableObject*> collidableObjects) {
 	double newY;
 
 	if (directionChangeCD_curr <= 0) {

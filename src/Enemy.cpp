@@ -28,9 +28,14 @@ Enemy::~Enemy() {
 	// TODO Auto-generated destructor stub
 }
 
-void Enemy::update(double dt, std::vector<CollidableObject*> collidableObjects) {
-	xPos += enemyMovement->updateXPos(xPos, yPos, stats.movespeed, dt, collidableObjects);
-	yPos += enemyMovement->updateYPos(yPos, xPos, stats.movespeed, dt, collidableObjects);
+void Enemy::update(double dt, std::vector<CollidableObject*> collidableObjects, std::vector<Enemy*> enemies) {
+	double projXPos = enemyMovement->updateXPos(xPos, yPos, stats.movespeed, dt, collidableObjects);
+	double projYPos = enemyMovement->updateYPos(yPos, xPos, stats.movespeed, dt, collidableObjects);
+
+	if (!checkCollisionsWithOtherEnemies(enemies, projXPos, projYPos)) {
+		xPos += projXPos;
+		yPos += projYPos;
+	}
 
 	if (stats.curr_hp <= 0) {
 		destroyed = true;
@@ -48,3 +53,16 @@ void Enemy::render(SDL_Renderer* rend) {
 	}
 }
 
+bool Enemy::checkCollisionsWithOtherEnemies(std::vector<Enemy*> enemies, double projXPos, double projYPos) {
+	bool collision = false;
+
+	for (auto& enemy : enemies) {
+		if ((projXPos > enemy->xPos && projXPos < enemy->xPos + 32) || (projXPos + 32 > enemy->xPos && projXPos + 32 <= enemy->xPos + 32)) {
+			if ((projYPos > enemy->yPos && projYPos < enemy->yPos + 32) || (projYPos + 32 > enemy->yPos && projYPos + 32 <= enemy->yPos + 32)) {
+				collision = true;
+			}
+		}
+	}
+
+	return collision;
+}

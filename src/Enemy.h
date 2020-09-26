@@ -32,9 +32,13 @@ public:
 	Enemy(const char* textureSheet, double xPosition, double yPosition, Stats enemyStats, MovementAI* movementAI);
 	virtual ~Enemy();
 
-	void update(double dt, std::vector<CollidableObject*> collidableObjects);
+	void update(double dt, std::vector<CollidableObject*> collidableObjects, std::vector<Enemy*> enemies);
 	void render(SDL_Renderer* rend);
 	bool isDestroyed() { return destroyed; }
+
+	void setCurrHealth(double health) { stats.curr_hp += health; }
+
+	bool checkCollisionsWithOtherEnemies(std::vector<Enemy*> enemy, double projXPos, double projYPos);
 
 	double xPos, yPos;
 
