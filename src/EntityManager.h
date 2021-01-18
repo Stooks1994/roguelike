@@ -21,6 +21,7 @@ public:
 	void removeDestroyedProjectiles();
 
 	bool checkCollisions(int x, int y, int w, int h);
+	bool checkCollisionWithEnemy(int x, int y, int w, int h);
 
 	void render(SDL_Renderer* rend);
 	void update(double dt);

@@ -103,6 +103,20 @@ bool EntityManager::checkCollisions(int x, int y, int w, int h) {
 
 	return collision;
 }
+
+bool EntityManager::checkCollisionWithEnemy(int x, int y, int w, int h) {
+	bool collision = false;
+
+	for (auto& e : enemies) {
+		if ((x > e->xPos && x < e->xPos + 32) || (x + 32 > e->xPos && x + 32 <= e->xPos + 32)) {
+			if ((y > e->yPos && y < e->yPos + 32) || (y + 32 > e->yPos && y+32 <= e->yPos + 32)) {
+				collision = true;
+			}
+		}
+	}
+
+	return collision;
+}
 /************************************/
 
 

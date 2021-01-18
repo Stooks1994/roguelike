@@ -16,6 +16,8 @@ public:
 	void handleEvents();
 	void render(SDL_Renderer* rend);
 
+	void dealDamageToPlayer(double damage);
+
 private:
 	double xVel;
 	double yVel;
@@ -29,6 +31,11 @@ private:
 	double fireCD_max;
 	double fireCD_curr;
 	//ProjectileManager* projectileManager;
+
+	double curr_HP;
+	double max_HP;
+	double damageTakenCD_max;
+	double damageTakenCD_curr;
 
 	SDL_Rect srcRect, destRect;
 	SDL_Texture* objectTexture;

@@ -25,6 +25,11 @@ Player::Player(const char* textureSheet, int x, int y) {
 
 	destRect.w = srcRect.w;
 	destRect.h = srcRect.h;
+
+	max_HP = 100;
+	curr_HP = max_HP;
+	damageTakenCD_max = 0.5;
+	damageTakenCD_curr = 0;
 }
 
 Player::~Player() {
@@ -74,6 +79,17 @@ void Player::update(double dt) {
 		yPos += yVel * dt;
 	}
 
+	if (Game::entityManager->checkCollisionWithEnemy(xPos, yPos, 32, 32)) {
+		if (damageTakenCD_curr == 0) {
+			dealDamageToPlayer(1);
+		}
+	}
+
+	damageTakenCD_curr -= dt;
+	if (damageTakenCD_curr < 0) {
+		damageTakenCD_curr = 0;
+	}
+
 	/*** Bound player inside map ***/
 	if (xPos < 0) xPos = 0;
 	if (xPos + 32 > 800) xPos = 800 - 32;
@@ -117,4 +133,11 @@ void Player::render(SDL_Renderer* rend) {
 	Game::entityManager->render(rend);
 
 	SDL_RenderCopy(rend, objectTexture, &srcRect, &destRect);
+}
+
+void Player::dealDamageToPlayer(double damage) {
+	curr_HP -= damage;
+	std::cout << curr_HP << std::endl;
+
+	damageTakenCD_curr = damageTakenCD_max;
 }
