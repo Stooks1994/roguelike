@@ -6,6 +6,7 @@
 #include "Enemy.h"
 #include "CollidableObject.h"
 #include "Projectile.h"
+#include "Consumable.h"
 
 class EntityManager {
 
@@ -16,9 +17,11 @@ public:
 	void addEnemy(Enemy* enemy);
 	void addCollidableObject(CollidableObject* object);
 	void addProjectile(Projectile* projectile);
+	void addConsumable(Consumable* consumable);
 
 	void removeDestroyedEnemies();
 	void removeDestroyedProjectiles();
+	void removeDestroyedConsumables();
 
 	bool checkCollisions(int x, int y, int w, int h);
 	bool checkCollisionWithEnemy(int x, int y, int w, int h);
@@ -30,6 +33,7 @@ private:
 	std::vector<Enemy*> enemies;
 	std::vector<CollidableObject*> collidableObjects;
 	std::vector<Projectile*> projectiles;
+	std::vector<Consumable*> consumables;
 
 };
 

@@ -45,7 +45,7 @@ src/TextureManager.o: ../src/TextureManager.cpp ../src/TextureManager.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_image.h ../src/Game.h \
   ../src/EntityManager.h ../src/Enemy.h ../src/MovementAI.h \
-  ../src/CollidableObject.h ../src/Projectile.h
+  ../src/CollidableObject.h ../src/Projectile.h ../src/Consumable.h
 
 ../src/TextureManager.h:
 
@@ -154,3 +154,5 @@ src/TextureManager.o: ../src/TextureManager.cpp ../src/TextureManager.h \
 ../src/CollidableObject.h:
 
 ../src/Projectile.h:
+
+../src/Consumable.h:

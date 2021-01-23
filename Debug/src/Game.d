@@ -45,7 +45,7 @@ src/Game.o: ../src/Game.cpp ../src/Game.h /usr/local/include/SDL2/SDL.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_image.h ../src/EntityManager.h \
   ../src/Enemy.h ../src/MovementAI.h ../src/CollidableObject.h \
-  ../src/Projectile.h ../src/Map.h ../src/Player.h
+  ../src/Projectile.h ../src/Consumable.h ../src/Map.h ../src/Player.h
 
 ../src/Game.h:
 
@@ -152,6 +152,8 @@ src/Game.o: ../src/Game.cpp ../src/Game.h /usr/local/include/SDL2/SDL.h \
 ../src/CollidableObject.h:
 
 ../src/Projectile.h:
+
+../src/Consumable.h:
 
 ../src/Map.h:
 

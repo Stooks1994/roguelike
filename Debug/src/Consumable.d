@@ -1,4 +1,4 @@
-src/Player.o: ../src/Player.cpp ../src/Player.h ../src/Game.h \
+src/Consumable.o: ../src/Consumable.cpp ../src/Consumable.h \
   /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
   /usr/local/include/SDL2/SDL_stdinc.h \
   /usr/local/include/SDL2/SDL_config.h \
@@ -43,13 +43,9 @@ src/Player.o: ../src/Player.cpp ../src/Player.h ../src/Game.h \
   /usr/local/include/SDL2/SDL_system.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
-  /usr/local/include/SDL2/SDL_image.h ../src/EntityManager.h \
-  ../src/Enemy.h ../src/MovementAI.h ../src/CollidableObject.h \
-  ../src/Projectile.h ../src/Consumable.h ../src/TextureManager.h
+  /usr/local/include/SDL2/SDL_image.h
 
-../src/Player.h:
-
-../src/Game.h:
+../src/Consumable.h:
 
 /usr/local/include/SDL2/SDL.h:
 
@@ -144,17 +140,3 @@ src/Player.o: ../src/Player.cpp ../src/Player.h ../src/Game.h \
 /usr/local/include/SDL2/SDL_version.h:
 
 /usr/local/include/SDL2/SDL_image.h:
-
-../src/EntityManager.h:
-
-../src/Enemy.h:
-
-../src/MovementAI.h:
-
-../src/CollidableObject.h:
-
-../src/Projectile.h:
-
-../src/Consumable.h:
-
-../src/TextureManager.h:

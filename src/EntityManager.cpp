@@ -24,6 +24,10 @@ void EntityManager::render(SDL_Renderer* rend) {
 	for (auto& projectile : projectiles) {
 		projectile->render(rend);
 	}
+
+	for (auto& consumable : consumables) {
+		consumable->render(rend);
+	}
 }
 
 void EntityManager::update(double dt) {
@@ -35,8 +39,13 @@ void EntityManager::update(double dt) {
 		projectile->update(dt, enemies);
 	}
 
+	for (auto& consumable : consumables) {
+		consumable->update(dt);
+	}
+
 	removeDestroyedEnemies();
 	removeDestroyedProjectiles();
+	removeDestroyedConsumables();
 }
 /************************************/
 
@@ -54,6 +63,10 @@ void EntityManager::addCollidableObject(CollidableObject* object) {
 
 void EntityManager::addProjectile(Projectile* projectile) {
 	projectiles.push_back(projectile);
+}
+
+void EntityManager::addConsumable(Consumable* consumable) {
+	consumables.push_back(consumable);
 }
 /************************************/
 
@@ -83,6 +96,16 @@ void EntityManager::removeDestroyedProjectiles() {
 	}
 
 	projectiles = temp;
+}
+
+void EntityManager::removeDestroyedConsumables() {
+	std::vector<Consumable*> temp;
+
+	for (auto& cons : consumables) {
+		if (!cons->isDestroyed) {
+			temp.push_back(cons);
+		}
+	}
 }
 /************************************/
 
@@ -117,6 +140,7 @@ bool EntityManager::checkCollisionWithEnemy(int x, int y, int w, int h) {
 
 	return collision;
 }
+
 /************************************/
 
 

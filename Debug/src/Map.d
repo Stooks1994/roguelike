@@ -45,7 +45,8 @@ src/Map.o: ../src/Map.cpp ../src/Map.h ../src/Game.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_image.h ../src/EntityManager.h \
   ../src/Enemy.h ../src/MovementAI.h ../src/CollidableObject.h \
-  ../src/Projectile.h ../src/TextureManager.h ../src/BlobMovement.h
+  ../src/Projectile.h ../src/Consumable.h ../src/TextureManager.h \
+  ../src/BlobMovement.h ../src/ConsumableMoney.h
 
 ../src/Map.h:
 
@@ -155,6 +156,10 @@ src/Map.o: ../src/Map.cpp ../src/Map.h ../src/Game.h \
 
 ../src/Projectile.h:
 
+../src/Consumable.h:
+
 ../src/TextureManager.h:
 
 ../src/BlobMovement.h:
+
+../src/ConsumableMoney.h:

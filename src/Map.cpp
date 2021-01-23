@@ -2,6 +2,8 @@
 #include "TextureManager.h"
 #include "BlobMovement.h"
 #include "CollidableObject.h"
+#include "Consumable.h"
+#include "ConsumableMoney.h"
 #include <iostream>
 #include <fstream>
 
@@ -57,6 +59,8 @@ void Map::loadMap(const char* fileName) {
 	Game::entityManager->addEnemy(new Enemy("./blob.png", 250, 550, enemyStats, new BlobMovement()));
 	Game::entityManager->addEnemy(new Enemy("./blob_red.png", 550, 550, enemyStats, new BlobMovement()));
 	Game::entityManager->addEnemy(new Enemy("./blob_blue.png", 650, 550, enemyStats, new BlobMovement()));
+
+	Game::entityManager->addConsumable(new ConsumableMoney(25, 100));
 }
 
 void Map::drawMap() {
