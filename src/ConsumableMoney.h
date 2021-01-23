@@ -9,8 +9,6 @@ class ConsumableMoney : public Consumable {
 public:
 	ConsumableMoney(double xPosition, double yPosition);
 	virtual ~ConsumableMoney();
-
-	//void alterPlayer() override;
 };
 
 #endif /* SRC_CONSUMABLEMONEY_H_ */

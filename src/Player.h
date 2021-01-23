@@ -17,6 +17,7 @@ public:
 	void render(SDL_Renderer* rend);
 
 	void dealDamageToPlayer(double damage);
+	void alterPlayerByConsumable(int consumableType);
 
 private:
 	double xVel;
@@ -25,6 +26,7 @@ private:
 	double yPos;
 	double movespeed;
 	int currDir;
+	int money;
 
 	bool firing;
 	int firingDir;
@@ -39,6 +41,7 @@ private:
 
 	SDL_Rect srcRect, destRect;
 	SDL_Texture* objectTexture;
+
 };
 
 #endif /* SRC_PLAYER_H_ */

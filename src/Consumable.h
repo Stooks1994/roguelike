@@ -11,6 +11,7 @@ public:
 	virtual ~Consumable();
 
 	void setIsDestroyed(bool value) { isDestroyed = value; };
+	int getType() { return consumableType; };
 	virtual void render(SDL_Renderer* rend);
 	virtual void update(double dt);
 	//virtual void alterPlayer();
@@ -20,6 +21,7 @@ public:
 
 	bool isDestroyed;
 	double xPos, yPos;
+	int consumableType;
 };
 
 #endif /* SRC_CONSUMABLE_H_ */

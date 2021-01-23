@@ -30,6 +30,8 @@ Player::Player(const char* textureSheet, int x, int y) {
 	curr_HP = max_HP;
 	damageTakenCD_max = 0.5;
 	damageTakenCD_curr = 0;
+
+	money = 0;
 }
 
 Player::~Player() {
@@ -85,6 +87,10 @@ void Player::update(double dt) {
 		}
 	}
 
+	if (int consumableType = Game::entityManager->checkCollisionWithConsumable(xPos, yPos, 32, 32)) {
+		alterPlayerByConsumable(consumableType);
+	}
+
 	damageTakenCD_curr -= dt;
 	if (damageTakenCD_curr < 0) {
 		damageTakenCD_curr = 0;
@@ -137,7 +143,21 @@ void Player::render(SDL_Renderer* rend) {
 
 void Player::dealDamageToPlayer(double damage) {
 	curr_HP -= damage;
-	std::cout << curr_HP << std::endl;
 
 	damageTakenCD_curr = damageTakenCD_max;
+}
+
+void Player::alterPlayerByConsumable(int consumableType) {
+	switch(consumableType) {
+	case 1:
+		money++;
+		printf("Money: %d\n", money);
+		break;
+	case 2:
+		curr_HP++;
+		printf("Curr HP: %f\n", curr_HP);
+		break;
+	default:
+		break;
+	}
 }

@@ -7,6 +7,7 @@ CPP_SRCS += \
 ../src/BlobMovement.cpp \
 ../src/CollidableObject.cpp \
 ../src/Consumable.cpp \
+../src/ConsumableHeart.cpp \
 ../src/ConsumableMoney.cpp \
 ../src/Enemy.cpp \
 ../src/EntityManager.cpp \
@@ -22,6 +23,7 @@ OBJS += \
 ./src/BlobMovement.o \
 ./src/CollidableObject.o \
 ./src/Consumable.o \
+./src/ConsumableHeart.o \
 ./src/ConsumableMoney.o \
 ./src/Enemy.o \
 ./src/EntityManager.o \
@@ -37,6 +39,7 @@ CPP_DEPS += \
 ./src/BlobMovement.d \
 ./src/CollidableObject.d \
 ./src/Consumable.d \
+./src/ConsumableHeart.d \
 ./src/ConsumableMoney.d \
 ./src/Enemy.d \
 ./src/EntityManager.d \

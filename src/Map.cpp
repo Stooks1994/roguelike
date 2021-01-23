@@ -4,6 +4,7 @@
 #include "CollidableObject.h"
 #include "Consumable.h"
 #include "ConsumableMoney.h"
+#include "ConsumableHeart.h"
 #include <iostream>
 #include <fstream>
 
@@ -61,6 +62,7 @@ void Map::loadMap(const char* fileName) {
 	Game::entityManager->addEnemy(new Enemy("./blob_blue.png", 650, 550, enemyStats, new BlobMovement()));
 
 	Game::entityManager->addConsumable(new ConsumableMoney(25, 100));
+	Game::entityManager->addConsumable(new ConsumableHeart(75, 100));
 }
 
 void Map::drawMap() {

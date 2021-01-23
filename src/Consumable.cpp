@@ -14,6 +14,8 @@ void Consumable::render(SDL_Renderer* rend) {
 		destRect.x = (int) xPos;
 		destRect.y = (int) yPos;
 		SDL_RenderCopy(rend, objectTexture, &srcRect, &destRect);
+	} else {
+		delete this;
 	}
 }
 

@@ -1,7 +1,7 @@
-#include "ConsumableMoney.h"
+#include "ConsumableHeart.h"
 #include "TextureManager.h"
 
-ConsumableMoney::ConsumableMoney(double xPosition, double yPosition) {
+ConsumableHeart::ConsumableHeart(double xPosition, double yPosition) {
 	isDestroyed = false;
 	xPos = xPosition;
 	yPos = yPosition;
@@ -12,12 +12,12 @@ ConsumableMoney::ConsumableMoney(double xPosition, double yPosition) {
 	srcRect.x = srcRect.y = 0;
 	srcRect.h = srcRect.w = 32;
 
-	objectTexture = TextureManager::loadTexture("gold.png");
+	objectTexture = TextureManager::loadTexture("heart.png");
 
-	consumableType = 1;
+	consumableType = 2;
 }
 
-ConsumableMoney::~ConsumableMoney() {
+ConsumableHeart::~ConsumableHeart() {
 	// TODO Auto-generated destructor stub
 }
 

@@ -106,6 +106,8 @@ void EntityManager::removeDestroyedConsumables() {
 			temp.push_back(cons);
 		}
 	}
+
+	consumables = temp;
 }
 /************************************/
 
@@ -134,6 +136,21 @@ bool EntityManager::checkCollisionWithEnemy(int x, int y, int w, int h) {
 		if ((x > e->xPos && x < e->xPos + 32) || (x + 32 > e->xPos && x + 32 <= e->xPos + 32)) {
 			if ((y > e->yPos && y < e->yPos + 32) || (y + 32 > e->yPos && y+32 <= e->yPos + 32)) {
 				collision = true;
+			}
+		}
+	}
+
+	return collision;
+}
+
+int EntityManager::checkCollisionWithConsumable(int x, int y, int w, int h) {
+	int collision = 0;
+
+	for (auto& e : consumables) {
+		if ((x > e->xPos && x < e->xPos + 32) || (x + 32 > e->xPos && x + 32 <= e->xPos + 32)) {
+			if ((y > e->yPos && y < e->yPos + 32) || (y + 32 > e->yPos && y+32 <= e->yPos + 32)) {
+				collision = e->getType();
+				e->setIsDestroyed(true);
 			}
 		}
 	}
